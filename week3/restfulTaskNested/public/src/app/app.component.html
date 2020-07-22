@@ -1,0 +1,10 @@
+<div class = "main">
+    <h1>Restful Tasks API</h1>
+    <button (click)="getTasks()">Show All Tasks</button>
+    <ul *ngIf="showTasksClick">
+        <h4>ALL TASKS</h4>
+        <li *ngFor="let i of tasks">{{i.title}} - {{i.description}}<button (click)="showTask(i._id)">Show More</button></li>
+    </ul> 
+    <app-single-task *ngIf="showTaskClick" [singleTask]="singleTask"></app-single-task>
+</div>
+<router-outlet></router-outlet> 

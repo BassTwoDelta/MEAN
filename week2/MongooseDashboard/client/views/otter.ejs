@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class ="container-fluid">
+        <div class="row">
+            <div class="col text-center">
+                <h1>THIS OTTER</h1>
+                <h4><%= otter.name %></h4>
+                <p>Age: <%= otter.age %></p>
+                <p>Locatoin: <%= otter.location %></p>
+                <p>Description: <%= otter.description %></p>
+                <form action="/otters/edit/<%= otter.id %>">
+                    <button type="submit" class="btn btn-primary">Edit Otter</button>
+                </form><br><br>
+                <form action="/otters/delete/<%= otter.id %>" method="POST">
+                    <button type="submit" class="btn btn-primary">Delete This Otter</button>
+                </form><br><br>
+                <form action="/">
+                    <button type="submit" class="btn btn-primary">Go Back Otters</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

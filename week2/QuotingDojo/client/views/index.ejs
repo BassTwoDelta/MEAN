@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoting Dojo</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main" style="width: 50%;">
+            <h1>Welcome to Quoting Dojo:</h1><br>
+            <form action="/quotes" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your name with anyone else. (haha JK. We probably will)</small>
+                </div>
+                <div class="form-group">
+                    <label for="quote">Enter Quote:</label>
+                    <textarea class="form-control" name="quote" rows="3" placeholder="Enter a quote here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add My Quote</button>
+            </form><br>
+            <form action="/quotes">
+                <button type="submit" class="btn btn-primary">Go To Quotes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

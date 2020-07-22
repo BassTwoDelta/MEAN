@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Main" style="width: 50%; border: 1px solid black;">
+            <form action="/get_results" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" name="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="Location">Dojo Location</label>
+                    <select class="form-control" name="location">
+                        <option>Arlington, VA</option>
+                        <option>Bellevue, WA</option>
+                        <option>Boise, ID</option>
+                        <option>Chicago, IL</option>
+                        <option>Dallas, TX</option>
+                        <option>Los Angeles, CA</option>
+                        <option>Oakland, CA</option>
+                        <option>Orange County, CA</option>
+                        <option>Seattle, WA</option>
+                        <option>Silicon Valley, CA</option>
+                        <option>Tulsa, OK</option>
+                    </select><br>
+                    <label for="exampleFormControlSelect1">Favorite Language:</label>
+                    <select class="form-control" name="faveLang">
+                        <option>JavaScript</option>
+                        <option>Python</option>
+                        <option>Ruby on Rails</option>
+                        <option>CSS</option>
+                        <option>HTML</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Comment</label>
+                    <textarea class="form-control" name="comment" rows="3"></textarea>
+                </div>
+                <input type="submit" class="btn btn-primary"></input>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

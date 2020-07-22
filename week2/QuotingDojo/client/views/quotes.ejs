@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main">
+            <h1> Here are the awesome quotes!</h1><br>
+            <% for (var quote of quotes) { %>
+                <h4>"<%= quote.quote%>"</h4>
+                <small style="color: blue; margin-left: 40px;">-<%= quote.name %> at <%= quote.createdAt %></small><br><br>
+            <% } %> 
+        </div>
+    </div>
+</body>
+</html>

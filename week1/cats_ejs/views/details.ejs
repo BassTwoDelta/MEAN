@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= name %></title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class='container-fluid'>
+        <div class="header" style="text-align: center">
+            <h1>Details page for <%= name %></h1>
+            <img src="/images/<%= name %>.jpg" alt="<% name %>" width="50%">
+        </div>
+        <div class="main" style="text-align: center;">
+            <br>
+            <p>Favorite Food: <%= favoriteFood %> </p><br>
+            <p>Age: <%= age %></p>
+            <p>Favorite Sleeping Spots:</p> 
+                <% for(let spot in sleepingSpots) {%>
+                <p><%= sleepingSpots[spot] %></p>
+                <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quoting Dojo</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="main" style="width: 50%;">
+            <h1>Add a new Otter:</h1><br>
+            <form action="/otters" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="age">Otter Age:</label>
+                    <input type="text" class="form-control" name="age" placeholder="Enter Age">
+                </div>
+                <div class="form-group">
+                    <label for="location">Otter Location:</label>
+                    <input type="text" class="form-control" name="location" placeholder="Enter Name">
+                    
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea class="form-control" name="description" rows="3" placeholder="Enter a description here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Otter</button>
+            </form><br>
+            <form action="/">
+                <button type="submit" class="btn btn-primary">Go To Otters</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
