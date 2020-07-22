@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <h1> Welcome to the Dojo Message Board!</h1>
+        <hr>
+        <div class="main" style="width: 50%;">
+            <form action="/postmessage" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                </div>
+                <div class="form-group">
+                    <label for="quote">Enter Message:</label>
+                    <textarea class="form-control" name="message" rows="3" placeholder="Enter a message here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Message</button>
+                <% if(errors){%>
+                    <small> <%= errors %></small>
+                    <% } %> 
+            </form>
+        </div>
+        <hr>
+        <div class="messagePost">
+            <h1> Message Board</h1>
+            <% for(var message of messages) { %>
+                <h4>Name: <%= message.name %></h4>
+                <h4>Message: <%= message.message %></h4>
+                <div class="comments" style="margin-left: 150px;">
+                    <h4>Comments:</h4>
+                        <% for(let comment of message.comments){ %>
+                            <h5 style="margin-left: 50px;"><%= comment.name %> says:</h5>
+                            <p style="margin-left: 75px"><%= comment.comment %></p>
+                        <% } %>
+                        <form action="/postcomment/<%= message.id %>" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="quote">Enter Comment:</label>
+                                <textarea class="form-control" name="comment" rows="3" placeholder="Enter a message here"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="margin-left: 85%">Post Comment</button>
+                        </form>
+                </div>
+                <hr>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,9 @@
+<div *ngIf="singleCake" class="container">
+    <h1>Baked by {{singleCake.baker}}</h1>
+    <img style="width: 200px; height: 200px;" src="{{singleCake.image}}">
+    <p>Average Rating: {{ averageRating }}</p>
+    <div *ngFor="let comment of singleCake.comment" class="cakeStats">
+        <p>Rating: {{ comment.rating }}</p>
+        <p>Comment: {{ comment.comment }}</p><hr>
+    </div>
+</div>

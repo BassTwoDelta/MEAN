@@ -1,0 +1,18 @@
+.main {
+    border: 2px solid red;
+    text-align: center;
+    list-style-position: inside;
+
+    ul{
+        border: 2px solid yellow;
+
+    }
+}
+
+.singleTask {
+    border: 2px solid blue;
+    width: 50%;
+    display: inline-block;
+
+}
+

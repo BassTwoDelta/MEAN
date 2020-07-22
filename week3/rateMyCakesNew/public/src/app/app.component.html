@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="jumbotron">
+        <h1>RATE MY CAKES</h1>
+        <div class="newCake">
+            <small>Submit a cake to be rated</small><br><hr>
+            <form class="form-group" (submit)="addCake()">
+                <label for="newBaker">Baker:</label>
+                <input type="text" name="newBaker" [(ngModel)]="newCake.baker"><br>
+                <label for="imageURL">Image URL:</label>
+                <input type="text" name="imageURL" [(ngModel)]="newCake.image"><br>
+                <input type="submit" value="SUBMIT YOUR CAKEEEEE!!">
+            </form>
+        </div>
+        <div class="cakesDisplay">
+            <div class="allCakes" *ngFor="let cake of allCakes">
+                <img (click)="showCake(cake._id)" class="cakes" src="{{cake.image}}">
+                <form class="form-group" (submit)="addRatingAndComment($event, cake._id)">
+                    <label for="rating">Rating:</label>
+                    <select id="rating" name="rating">
+                        <option [value]="1">1</option>
+                        <option [value]="2">2</option>
+                        <option [value]="3">3</option>
+                        <option [value]="4">4</option>
+                        <option [value]="5">5</option>
+                    </select><br>
+                    <label for="comment">Comment:</label>
+                    <textarea type="text" name="comment"></textarea><br>
+                    <input type="submit" value="RATE!"><hr>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="cakeInfo">
+        <app-cake *ngIf="showCakeClick" [singleCake]="singleCake" [averageRating]="averageRating"></app-cake>
+    </div>
+</div>
+<router-outlet></router-outlet>

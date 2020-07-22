@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class ="container-fluid">
+        <div class="header">
+            <h1 style="text-align: center;">Triva</h1>
+            <button>START GAME</button>
+            <p style="text-align: right;">Points:</p>
+        </div>
+        <div id="cat1" style="display: inline-block; text-align: center; width: 300px;">
+            <table>
+                <th>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </th>
+            </table>
+        </div>
+        <div id="cat2" style="display: inline-block; text-align: center; width: 300px;">
+            <table>
+                <th>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </th>
+            </table>
+        </div>
+        <div id="cat3" style="display: inline-block; text-align: center; width: 300px;">
+            <table>
+                <th>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </th>
+            </table>
+        </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function getTrivia(){
+            $('#cat1 table').html('<th>Category<th>')
+            $.get('https://opentdb.com/api.php?amount=5&category=12', function(data){
+                console.log(data.results)
+                addQuestion(data.results)
+            })
+            $('#cat2 table').html('<th>Category<th>')
+            $.get('https://opentdb.com/api.php?amount=5&category=23', function(data){
+                console.log(data.results)
+            })
+            $('#cat3 table').html('<th>Category<th>')
+            $.get('https://opentdb.com/api.php?amount=5&category=14', function(data){
+                console.log(data.results)
+
+            })
+        }
+
+        function addQuestion(question){
+            console.log(question)
+                $('#cat1 table').append("<p>"+ question.question +"</p>")
+            }
+
+        function addAllQuestions(list){
+            for(let question in list){
+                addQuestion(list[question])
+            }
+        }
+
+        $('button').click(getTrivia)
+    </script>
+</body>
+</html>

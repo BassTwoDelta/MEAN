@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Results</title>
+    <link rel="stylesheet" href ="/css/bootstrap.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="Main" style="width: 50%; border: 1px solid black;">
+            <h3 style="text-decoration: underline;">Submitted Information</h3>
+            <p>Name: <%= name %></p>
+            <p>Dojo Location: <%= location %></p>
+            <p>Favorite Language: <%= faveLang %></p>
+            <p>Comment: <%= comment %></p>
+            <from action="/">
+                <input type="submit" value="GO BACK!!!!" onclick="history.back(-1)" class="btn btn-primary" style="text-align: right;"></input>
+            </from>
+        </div>
+    </div>
+</body>
+</html>

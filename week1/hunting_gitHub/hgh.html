@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunting Git</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <button>Get Name</button>
+    <table>
+    </table>
+    <script>
+        function getName(){
+            $('table').html('<th>Name</th>')
+            $.get('https://api.github.com/users/BassTwoDelta', function(data){
+                console.log(data.name)
+                $('table').append('<tr><td>'+ data.name + '</td></tr>')
+            })    
+        }
+
+        $('button').click(getName)
+    </script>
+</body>
+</html>

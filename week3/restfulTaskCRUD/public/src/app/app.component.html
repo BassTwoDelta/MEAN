@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<div class="container">
+    <div class="jumbotron">
+    <h1>New Task</h1>
+        <form class="form-group" (submit)="createTask()">
+            <label for="newTaskTitle">Title:</label>
+            <input type="text" name="newTaskTitle" [(ngModel)]="newTask.title"><br>
+            <label for="newTaskDescription">Description:</label>
+            <input type="text" name="newTaskDescription" [(ngModel)]="newTask.description">
+            <input type="submit" value="Create New Task">
+        </form>
+    </div>
+    <div class ='row'>
+        <div class='col'>
+        <h1>Task List</h1>
+            <div *ngFor="let i of tasks" class="tasks">
+                <strong>{{i.title}}</strong>
+                <p>{{i.description}}</p>
+                <p>Completed: {{i.completed}}</p>
+                <button (click)="deleteTask(i._id)">Delete</button>
+                <button (click)="ShowEditTask(i._id)">Edit</button>
+            </div>
+        </div>
+        <div *ngIf="taskToEdit" class='col'>
+            <h1>Edit Task</h1>
+            <div class="tasks">
+                <form class="form-group" (submit)="updateTask(taskToEdit._id)">
+                    <label for="editTaskTitle">Title:</label>
+                    <input type="text" name="editTaskTitle" [(ngModel)]="taskToEdit.title"><br>
+                    <label for="editTaskDescription">Description:</label>
+                    <input type="text" name="editTaskDescription" [(ngModel)]="taskToEdit.description">
+                    <label for="editCompleted">Completed?:</label>
+                    <input type="checkbox" name="completed" [(ngModel)] = "taskToEdit.completed">
+                    <input type="submit" value="Edit Task">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet> 

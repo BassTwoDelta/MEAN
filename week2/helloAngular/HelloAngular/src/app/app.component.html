@@ -1,0 +1,10 @@
+<h1>Hello Class<p (click)='getTasks()'>Inside H1</p></h1>
+<app-nav-bar></app-nav-bar>
+<h2>Something Else Here</h2>
+<form (submit)='onSubmit()'>
+    <input type="text" name="name" [(ngModel)]='title'>
+    <input type="submit" value='yeah!'>
+</form>
+<button (click)="logTitle()">Click Me! CLICK ME!!!</button>
+<app-cookie-list *ngIf="titleClicked"></app-cookie-list> 
+<router-outlet></router-outlet>
