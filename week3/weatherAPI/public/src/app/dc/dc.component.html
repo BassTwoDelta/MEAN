@@ -1,0 +1,21 @@
+<div class="container">
+    <div style="text-align: center;" class="header">
+        <h3>WASHINGTON, DC WEATHER</h3>
+    </div>
+    <div class="row">
+        <div class='col'>
+            <div class="weatherData">
+                <p>Humidity: {{ currentWeather.main.humidity }}</p>
+                <p>Temperature (Average): {{ averageTemp }} </p>
+                <p>Temperature (High): {{ currentWeather.main.temp_max }}</p>
+                <p>Temperature (Low): {{ currentWeather.main.temp_min }}</p>
+                <p>Status: {{ currentWeather.weather[0].description }}</p>
+            </div>
+        </div>
+        <div class="col">
+            <div class="cityImage">
+            <img style="width: 400px;" src="https://rb.gy/wsyyth">
+            </div>
+        </div>
+    </div>
+</div>
