@@ -1,0 +1,15 @@
+.container{
+    border: 1px solid black;
+    background-color: grey;
+}
+
+.addNote{
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+
+    form{
+        vertical-align: middle;
+        margin-top: 20px;
+    }
+}

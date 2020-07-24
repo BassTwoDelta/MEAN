@@ -1,0 +1,8 @@
+<small><a href="/">Home</a></small>
+<h5>ADD A NEW AUTHOR:</h5>
+<form class="form-group" (submit)="addNewAuthor()">
+    <label for="newAuthor">Name:</label><br>
+    <input type="text" class="form-group" name="name" [(ngModel)]="newAuthorToAdd.name"><br>
+    <input class="btn btn-primary" type="submit" value="ADD">
+</form>
+
