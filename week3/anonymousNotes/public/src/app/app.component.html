@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="header">
+    <h1>Anonymous Notes Honey!</h1><hr>
+    <div class="addNote">
+      <form class="form-group" (submit)="addNote()">
+        <label for="newNote">Note: </label>
+        <input  type="text" name="newNote" style="width:75%" [(ngModel)]="newNote.note">
+        <input type="submit" class="btn btn-success" value="Add Note!">
+      </form>
+    </div>
+  </div>
+<router-outlet></router-outlet>
+</div>

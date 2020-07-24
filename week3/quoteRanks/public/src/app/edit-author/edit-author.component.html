@@ -1,0 +1,7 @@
+<small><a href="/">Home</a></small>
+<h5>EDIT AUTHOR:</h5>
+<form class="form-group" (submit)="editAuthor()">
+    <label for="newAuthor">Name:</label><br>
+    <input type="text" class="form-group" name="name" [(ngModel)]="author.name" ><br>
+    <input class="btn btn-primary" type="submit" value="EDIT AUTHOR">
+</form>
