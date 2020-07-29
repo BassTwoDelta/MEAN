@@ -1,0 +1,19 @@
+<div class="updateProduct">
+    <h3>UPDATE PRODUCT</h3>
+    <div class="update">
+        <form class="form-group" (submit)="editProduct()">
+            <ul *ngFor="let error of errors">
+                <li>{{error}}</li>
+            </ul>
+            <label for="newProduct">Name:</label>
+            <input type="text" class="form-group" name="name" [(ngModel)]="productToEdit.name"><br>
+            <label for="newQty">Qty: </label>
+            <input type="text" class="form-group" name="qty" [(ngModel)]="productToEdit.qty"><br>
+            <label for="newPrice">Price: </label>
+            <input type="text" class="form-group" name="price" [(ngModel)]="productToEdit.price"><br>
+            <a (click)="show()"class="btn btn-secondary">RESET</a>
+            <input class="btn btn-success" type="submit" value="UPDATE" >
+        </form>
+    </div>
+</div>
+

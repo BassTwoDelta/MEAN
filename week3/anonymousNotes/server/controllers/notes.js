@@ -3,7 +3,7 @@ const {Note} = require('../models/note')
 module.exports = {
     index: function(req,res){
         Note.find().sort({createdAt: -1})
-            .then(cake => res.json(cake))
+            .then(note => res.json(note))
             .catch(err => res.json(err))
     },
 
@@ -11,7 +11,7 @@ module.exports = {
         note = new Note()
         note.note = req.body.note
         note.save()
-            .then(cake => res.json(cake))
+            .then(note => res.json(note))
             .catch(err => res.json(err))
     }
 

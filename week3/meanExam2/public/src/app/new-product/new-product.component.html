@@ -1,0 +1,18 @@
+<div class="newProduct">
+    <h3>NEW PRODUCT</h3>
+    <div class="add">
+        <form class="form-group" (submit)="addNewProduct()">
+            <ul *ngFor="let error of errors">
+                <li>{{error}}</li>
+            </ul>
+            <label for="newProduct">Name:</label>
+            <input type="text" class="form-group" name="name" [(ngModel)]="productToAdd.name"><br>
+            <label for="newQty">Qty: </label>
+            <input type="text" class="form-group" name="qty" [(ngModel)]="productToAdd.qty"><br>
+            <label for="newPrice">Price: </label>
+            <input type="text" class="form-group" name="price" [(ngModel)]="productToAdd.price"><br>
+            <a [routerLink] = "['/products']"class="btn btn-secondary">Cancle</a>
+            <input class="btn btn-primary" type="submit" value="CREATE" >
+        </form>
+    </div>
+</div>

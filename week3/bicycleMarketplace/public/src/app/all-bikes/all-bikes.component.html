@@ -1,0 +1,20 @@
+<input type="text" name="searchCriteria" style="width:75%">
+<input type="submit" value="Search"><hr>
+<div class="bikes">
+    <div class="row" *ngFor="let bike of allBikes">
+        <div class="col col-sm-4">
+            <img class="img-thumbnail" src="{{bike.image}}" alt="FoxyKnoxy" style="width:200px;">
+        </div>
+        <div class="col col-sm-6">
+            <h4>{{ bike.title }}</h4>
+            <p class="text-wrap">{{ bike.description }}</p>
+        </div>
+        <div class=" col col-sm-1">
+            <h5>${{bike.price}}</h5>
+            <p>{{bike.location}}</p>
+            <button [routerLink]="['edit']"class="btn btn-warning">Edit</button>
+            <button (click)="deleteBike(bike._id)"class="btn btn-danger">Delete</button>
+        </div>
+    </div><br><hr>
+</div>
+

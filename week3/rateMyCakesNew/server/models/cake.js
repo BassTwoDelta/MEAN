@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 
     comment: {
         type: String,
-        minlength: [5, "The comment must be at least 5 characters"],
+        minlength: [5, "The comment must be at least 5 characters!!"],
     }
 }, {timestamps: true});
 
@@ -19,7 +19,7 @@ const cakeSchema = new mongoose.Schema({
 
     baker: {
         type:String,
-        minlength: [2, "Baker's name must be at least 3 characters" ],
+        minlength: [2, "Baker's name must be at least 3 characters!!" ],
         required: [true, "The baker must have a name!"]
     },
 

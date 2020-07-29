@@ -7,10 +7,8 @@ import { HttpService } from '../http.service';
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  allNotes: any;
-  timestamp: String;
+  @Input() allNotes:any;
 
-  @Input()newNote
   constructor(private _httpService: HttpService) { }
 
   ngOnInit() {

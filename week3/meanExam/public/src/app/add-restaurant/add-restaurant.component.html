@@ -1,0 +1,14 @@
+<small>Register a restaurant</small>
+<div class="add">
+    <form class="form-group" (submit)="addNewRestaurant()">
+        <label for="newRestaurant">Restaurant Name:</label><br>
+        <input type="text" class="form-group" name="name" [(ngModel)]="newRestaurantToAdd.name"><br>
+        <label for="newCuisine">Cuisine: </label><br>
+        <input type="text" class="form-group" name="cuisine" [(ngModel)]="newRestaurantToAdd.cuisine"><br>
+        <ul *ngFor="let error of errors">
+            <li>{{error}}</li>
+        </ul>
+        <a href="/" class="btn btn-secondary">Cancle</a>
+        <input class="btn btn-primary" type="submit" value="ADD" >
+    </form>
+</div>

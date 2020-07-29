@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-root',
@@ -16,14 +16,16 @@ export class AppComponent implements OnInit {
   constructor(private _httpService: HttpService){}
 
   ngOnInit(){
-    this.newNote={note: ""}
+    this.newNote={}
+
 
   }
 
   addNote(){
     this._httpService.addNote(this.newNote).subscribe(note =>{
       console.log("The note has been added!", note)
-      this.newNote = {note: ""}
+      this.newNote = {}
+      this.getAllNotesFromService()
     })
   }
 

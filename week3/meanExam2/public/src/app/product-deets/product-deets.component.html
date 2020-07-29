@@ -1,0 +1,10 @@
+<div class="productDeets">
+    <h3>Product Details</h3><br><br>
+    <div class="info">
+        <p>Name: {{ product.name }}</p>
+        <p>Qty: {{ product.qty }}</p>
+        <p>Price: ${{product.price}}</p><br><br>
+        <button class="btn btn-secondary" [routerLink] = "['/products']">Go Back</button>
+        <button (click)="deleteProduct()" class="btn btn-danger">Delete</button>
+    </div>
+</div>

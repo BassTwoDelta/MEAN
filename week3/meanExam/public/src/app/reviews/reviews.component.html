@@ -1,0 +1,19 @@
+<button class="btn btn-info" [routerLink] = "['/restaurants', id, 'review']">Add Review</button>
+<div class="main">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Stars</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let review of allReviews.reviews">
+                <td>{{review.customer_name}}</td>
+                <td>{{review.stars}}</td>
+                <td>{{review.review}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
