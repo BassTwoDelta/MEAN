@@ -1,0 +1,19 @@
+<form class="form-group" (submit)="addReview($event)">
+    <label for="customerName">Your Name:</label>
+    <input type="text" class="form-group" name="customer_name"><br>
+    <label for="stars">Rating:</label>
+    <select id="stars" name="stars">
+        <option [value]="1">1</option>
+        <option [value]="2">2</option>
+        <option [value]="3">3</option>
+        <option [value]="4">4</option>
+        <option [value]="5">5</option>
+    </select><br>
+    <label for="review">Review:</label>
+    <textarea type="text" name="review"></textarea><br>
+    <input class="btn btn-primary" type="submit" value="LEAVE REVIEW!">
+    <a (click)=redirect() class="btn btn-info">Cancel</a><hr>
+    <ul *ngFor="let error of errors">
+        <li>{{errors}}</li>
+    </ul>
+</form>

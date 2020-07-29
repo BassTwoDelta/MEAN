@@ -1,0 +1,14 @@
+<small>Edit a restaurant</small>
+<div class="edit">
+    <form class="form-group" (submit)="editRestaurant()">
+        <label for="editRestaurant">Restaurant Name:</label><br>
+        <input type="text" class="form-group" name="name" [(ngModel)]="restaurantToEdit.name"><br>
+        <label for="editCuisine">Cuisine: </label><br>
+        <input type="text" class="form-group" name="cuisine" [(ngModel)]="restaurantToEdit.cuisine"><br>
+        <ul *ngFor="let error of errors">
+            <li>{{error}}</li>
+        </ul>
+        <input class="btn btn-primary" type="submit" value="Submit Edit" >
+        <a href="/" class="btn btn-secondary">Cancle</a>
+    </form>
+</div>
